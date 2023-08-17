@@ -1,3 +1,5 @@
+package arrays;
+
 import arrays.DeepCopy;
 import org.junit.jupiter.api.Test;
 
