@@ -6,7 +6,7 @@ public class DuplicateChars {
     public static char[] duplicateChars(String string) {
         StringBuilder seen = new StringBuilder();
         StringBuilder dst = new StringBuilder();
-        if (string.length()<2) return string.toCharArray();
+        if (string.length()<2) return new char[]{};
 
         for (int i = 0; i < string.length() - 1; i++) {
             String tmp = string.substring(i + 1);
@@ -19,8 +19,5 @@ public class DuplicateChars {
         Arrays.sort(result);
         return result;
 
-    }
-    public static void main(String[] args) {
-        char[] ris = duplicateChars("whistleblower");
     }
 }
