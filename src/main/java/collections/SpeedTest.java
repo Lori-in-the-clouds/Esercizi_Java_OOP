@@ -2,8 +2,8 @@ package collections;
 
 import java.util.Iterator;
 import java.util.List;
-
-import static java.lang.System.nanoTime;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class SpeedTest {
     public static long insertBeginning(List<String> list, String item, int times) {
@@ -22,5 +22,4 @@ public class SpeedTest {
         long finish = System.nanoTime();
         return finish-start;
     }
-
 }
