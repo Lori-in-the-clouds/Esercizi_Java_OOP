@@ -9,6 +9,7 @@ public class Reverse {
             list.add(list.size(),list.get(0));
             list.remove(0);
         }
+
     }
 
     public static void main(String[] args) {
