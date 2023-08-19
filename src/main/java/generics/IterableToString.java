@@ -7,7 +7,7 @@ public class IterableToString {
         StringBuilder dst = new StringBuilder();
         for (Iterator iterator = src.iterator(); iterator.hasNext();) {
             dst.append(iterator.next().toString());
-            if ( iterator.hasNext()) dst.append(", ");
+            dst.append(", ");
         }
         return dst.toString();
     }
