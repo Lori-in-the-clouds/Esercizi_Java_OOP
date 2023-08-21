@@ -1,9 +1,25 @@
 package functional;
 
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class PhoneBook {
-    public class Person {
+
+    List<Person> phonebook = new ArrayList<>();
+
+    public PhoneBook(List<Person> phonebook) {
+        this.phonebook = phonebook;
+    }
+
+    public List<Person> getPhonebook() {
+        return phonebook;
+    }
+
+    public void setPhonebook(List<Person> phonebook) {
+        this.phonebook = phonebook;
+    }
+
+    public static class Person {
         String name;
         String lastname;
         String phone;
@@ -38,4 +54,16 @@ public class PhoneBook {
             this.phone = phone;
         }
     }
+
+    public Optional<Person> searchByLastname(String lastname) {
+       return phonebook.stream().filter(t1 -> t1.getLastname().equals(lastname)).findFirst();
+    }
+    public Optional<Person> searchByNameAndLastname(String name, String lastname) {
+        return phonebook.stream().filter(t1 -> t1.getLastname().equals(lastname) && t1.getName().equals(name)).findFirst();
+
+    }
+
+
+
+
 }
