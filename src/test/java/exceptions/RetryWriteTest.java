@@ -1,0 +1,12 @@
+package exceptions;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class RetryWriteTest {
+    @Test
+    void writeWithTries() {
+        assertThrows(RuntimeException.class, () -> RetryWrite.writeWithTries(3));
+    }
+}
