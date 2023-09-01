@@ -20,6 +20,6 @@ public class BankAccount {
     }
 
     public void withdraw(double amount) {
-
+        if (balance >= amount) balance-=amount;
     }
 }
