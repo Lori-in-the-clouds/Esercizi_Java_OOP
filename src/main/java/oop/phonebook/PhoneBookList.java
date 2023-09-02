@@ -6,6 +6,11 @@ import java.util.List;
 public class PhoneBookList implements PhoneBook {
     static final int MAX_PERSON = 256;
     ArrayList<Person> phoneBook;
+
+    public PhoneBookList() {
+        phoneBook = new ArrayList<>();
+    }
+
     @Override
     public boolean addPerson(Person p) {
        if (phoneBook.contains(p)) return false;

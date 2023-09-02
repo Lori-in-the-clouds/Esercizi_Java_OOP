@@ -3,11 +3,16 @@ package oop.phonebook;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class PhoneBookArray implements  PhoneBook{
     static final int MAX_PERSON = 256;
     Person[] phoneBook;
+
+    public PhoneBookArray() {
+        this.phoneBook = new Person[MAX_PERSON];
+    }
 
     @Override
     public boolean addPerson(Person p) {
