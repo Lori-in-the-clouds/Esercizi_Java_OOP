@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PhoneBookArrayTest extends PhoneBookTest {
+class PhoneBookArrayTest extends PhoneBookTestBase {
     @BeforeEach
     void setUp() {
         pb = new PhoneBookArray();

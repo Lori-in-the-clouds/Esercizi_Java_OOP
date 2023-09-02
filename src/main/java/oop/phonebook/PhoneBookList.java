@@ -34,21 +34,21 @@ public class PhoneBookList implements PhoneBook {
     public Person[] searchByLastname(String lastname) {
         List<Person> tmp = new ArrayList<>();
         for (Person i : phoneBook) {
-            if (i.getLastname() == lastname) {
+            if (i.getLastname().equals(lastname)) {
                 tmp.add(i);
             }
         }
-        return tmp.toArray(new Person[tmp.size()]);
+        return tmp.toArray(new Person[]{});
     }
 
     @Override
     public Person[] searchByNameAndLastname(String name, String lastname) {
         List<Person> tmp = new ArrayList<>();
         for (Person i : phoneBook) {
-            if (i.getLastname() == lastname && i.getName() == name) {
+            if (i.getLastname().equals(lastname) && i.getName().equals(name)) {
                 tmp.add(i);
             }
         }
-        return tmp.toArray(new Person[tmp.size()]);
+        return tmp.toArray(new Person[]{});
     }
 }

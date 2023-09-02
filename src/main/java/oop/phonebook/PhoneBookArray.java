@@ -45,7 +45,7 @@ public class PhoneBookArray implements  PhoneBook{
         for (Person i : phoneBook) {
             if (i != null && i.getLastname().equals(lastname)) tmp.add(i);
         }
-        return tmp.toArray(new Person[tmp.size()]);
+        return tmp.toArray(new Person[]{});
     }
 
     @Override
@@ -55,6 +55,6 @@ public class PhoneBookArray implements  PhoneBook{
         for (Person i : phoneBook) {
             if (i != null && i.getLastname().equals(lastname) && i.getName().equals(name)) tmp.add(i);
         }
-        return tmp.toArray(new Person[tmp.size()]);
+        return tmp.toArray(new Person[]{});
     }
 }
