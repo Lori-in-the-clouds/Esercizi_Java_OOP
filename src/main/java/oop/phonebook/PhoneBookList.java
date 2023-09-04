@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PhoneBookList implements PhoneBook {
     static final int MAX_PERSON = 256;
-    ArrayList<Person> phoneBook;
+    final ArrayList<Person> phoneBook;
 
     public PhoneBookList() {
         phoneBook = new ArrayList<>();
@@ -14,25 +14,20 @@ public class PhoneBookList implements PhoneBook {
     @Override
     public boolean addPerson(Person p) {
        if (phoneBook.contains(p)) return false;
-       if (phoneBook.size() < MAX_PERSON) {
-           phoneBook.add(p);
-           return true;
+       if (phoneBook.size() >= MAX_PERSON) {
+           return false;
        }
-       return false;
+       return phoneBook.add(p);
     }
 
     @Override
     public boolean removePerson(Person p) {
-        if (phoneBook.contains(p)) {
-            phoneBook.remove(p);
-            return true;
-        }
-        return false;
+        return phoneBook.remove(p);
     }
 
     @Override
     public Person[] searchByLastname(String lastname) {
-        List<Person> tmp = new ArrayList<>();
+        ArrayList<Person> tmp = new ArrayList<>();
         for (Person i : phoneBook) {
             if (i.getLastname().equals(lastname)) {
                 tmp.add(i);
@@ -43,7 +38,7 @@ public class PhoneBookList implements PhoneBook {
 
     @Override
     public Person[] searchByNameAndLastname(String name, String lastname) {
-        List<Person> tmp = new ArrayList<>();
+        ArrayList<Person> tmp = new ArrayList<>();
         for (Person i : phoneBook) {
             if (i.getLastname().equals(lastname) && i.getName().equals(name)) {
                 tmp.add(i);

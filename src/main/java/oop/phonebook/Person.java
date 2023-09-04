@@ -3,13 +3,14 @@ package oop.phonebook;
 import java.util.Objects;
 
 public class Person {
-    String lastname;
     String name;
+
+    String lastname;
     String phone;
 
-    public Person(String lastname, String name, String phone) {
-        this.lastname = lastname;
+    public Person(String name, String lastname, String phone) {
         this.name = name;
+        this.lastname = lastname;
         this.phone = phone;
     }
 
