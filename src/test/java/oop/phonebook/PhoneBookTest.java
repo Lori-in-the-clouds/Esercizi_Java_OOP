@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-abstract class PhoneBookTestBase {
+abstract class PhoneBookTest {
     PhoneBook pb;
 
     @Test
@@ -36,4 +36,5 @@ abstract class PhoneBookTestBase {
                 pb.searchByNameAndLastname("Nicola", "Bicocchi"));
         assertArrayEquals(new Person[]{}, pb.searchByNameAndLastname("Alessandro", "Manzoni"));
     }
+
 }
